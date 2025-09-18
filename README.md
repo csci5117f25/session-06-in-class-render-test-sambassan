@@ -5,10 +5,16 @@ We will go over steps in lecture. You should fill out the following:
 
 ## What steps do I need to do when I download this repo to get it running?
 
-
+- Clone the repo.
+- Ensure the version of python in the pipfile matches the version of python on my computer.
 
 ## What commands starts the server?
 
+- 'pipenv install'
+- 'pipenv run flask --app server.py run'
+
+- 'pipenv install gunicorn'
+- 'pipenv run gunicorn server:app'
 
 ## Before render
 
