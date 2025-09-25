@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
 
-    <title>Hi!</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Hi!</title>
 </head>
+
 <body>
     
-<h1>I changed this so I can see live changes to the site</h1>
-{% if name %}
-<h2>and hello to {{name}}</h2>
-{% endif %}
+  <h1>I changed this so I can see live changes to the site</h1>
+  {% if name %}
+  <h2>and hello to {{name}}</h2>
+  {% endif %}
+    
+  <form action="/submit" method="post">
+    <label for="name">Enter name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  {% for entry in guestbook %}
+  <div>
+    <h5>{{entry.name}}</h5>
+    <div style="white-space-collapse: preserve;">{{entry.text}}</div>
+  </div>
+  {% endfor %}
+
 </body>
 </html>
