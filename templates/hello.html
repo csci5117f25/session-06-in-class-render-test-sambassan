@@ -12,8 +12,16 @@
 <body>
     
   <h1>I changed this so I can see live changes to the site</h1>
-  {% if name %}
-  <h2>and hello to {{name}}</h2>
+
+  {% if session %}
+  <h1>SESSION</h1>
+  <code>
+    <pre>
+      {{session | tojson}}
+    </pre>
+  </code>
+  {% else %}
+  <h1>NO SESSION</h1>
   {% endif %}
     
   <form action="/submit" method="post">
